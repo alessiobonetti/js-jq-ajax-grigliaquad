@@ -3,11 +3,11 @@
 // Se è <= 5 il quadrato diventa giallo, se è > di 5 il quadrato diventa verde.
 // Il numero ottenuto appare al centro del quadrato.
 function comparaNumero (num){
+  var minore = false;
   if (num <= 5){
-    var minore = true;
-  }else if (num > 5
-  ) {
-    var minore = false
+    minore = true;
+  }else if (num > 5) {
+    minore = false;
   }
   return minore;
 }
@@ -22,7 +22,7 @@ $(".box").click(
         "method": "GET",
         "success": function (data, stato) {
         console.log(data);
-        var comparato = comparaNumero(data.response)
+        var comparato = comparaNumero(data.response);
         console.log(comparato);
         if(comparato == true){
           $(this).addClass("yellow");
