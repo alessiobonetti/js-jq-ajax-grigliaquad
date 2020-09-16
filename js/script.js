@@ -15,7 +15,7 @@ function comparaNumero (num){
 
 $(".box").click(
   function() {
-    $(".number").html("");
+    $(this).html("");
     $(this).removeClass("yellow");
     $(this).removeClass("green");
     var divClick = $(this);
@@ -32,7 +32,7 @@ $(".box").click(
         } else if (comparato == false) {
           $(divClick).addClass("green");
         }
-        $(".number").append(data.response);
+        $(divClick).append(data.response);
         },
         error: function (richiesta, stato, errori) {
         alert("E' avvenuto un errore. " + errore);
