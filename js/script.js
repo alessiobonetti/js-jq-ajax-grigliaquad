@@ -5,7 +5,8 @@
 function comparaNumero (num){
   if (num <= 5){
     var minore = true;
-  }else if (num > 5) {
+  }else if (num > 5
+  ) {
     var minore = false
   }
   return minore;
@@ -20,9 +21,14 @@ $(".box").click(
         "url": "https://flynn.boolean.careers/exercises/api/random/int",
         "method": "GET",
         "success": function (data, stato) {
-          console.log(data);
-        var comparato = comparaNumero(data)
+        console.log(data);
+        var comparato = comparaNumero(data.response)
         console.log(comparato);
+        if(comparato == true){
+          $(this).addClass("yellow");
+        } else if (comparato == false) {
+          $(this).addClass("green");
+        }
         },
         error: function (richiesta, stato, errori) {
         alert("E' avvenuto un errore. " + errore);
