@@ -29,6 +29,7 @@ $(".box").click(
         } else if (comparato == false) {
           $(divClick).addClass("green");
         }
+        $(divClick).append(data.response);
         },
         error: function (richiesta, stato, errori) {
         alert("E' avvenuto un errore. " + errore);
