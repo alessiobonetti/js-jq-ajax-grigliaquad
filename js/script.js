@@ -15,7 +15,7 @@ function comparaNumero (num){
 
 $(".box").click(
   function() {
-    var divClick = $(this).index();
+    var divClick = $(this);
     $.ajax(
       {
         "url": "https://flynn.boolean.careers/exercises/api/random/int",
@@ -25,9 +25,9 @@ $(".box").click(
         var comparato = comparaNumero(data.response);
         console.log(comparato);
         if(comparato == true){
-          $(this).addClass("yellow");
+          $(divClick).addClass("yellow");
         } else if (comparato == false) {
-          $(this).addClass("green");
+          $(divClick).addClass("green");
         }
         },
         error: function (richiesta, stato, errori) {
